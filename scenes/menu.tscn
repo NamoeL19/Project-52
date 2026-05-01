@@ -42,8 +42,8 @@ scale = Vector2(1.1240234, 1.1232638)
 texture = ExtResource("1_vjb58")
 
 [node name="ArtpoinSonicTheHedgehog2" type="Sprite2D" parent="." unique_id=104587539]
-position = Vector2(193.00002, 448)
-scale = Vector2(0.088018954, 0.08801895)
+position = Vector2(211.90625, 332.6926)
+scale = Vector2(0.10325978, 0.15375863)
 texture = ExtResource("2_con2f")
 
 [node name="play" type="Button" parent="." unique_id=830817214]
