@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cmqq0go7axdo0"]
+
+[ext_resource type="Script" uid="uid://epo818gl8aws" path="res://scripts/teste_1.gd" id="1_4s30k"]
+[ext_resource type="Texture2D" uid="uid://diuvrn74ypafa" path="res://assets/scenarios/f3b6a88657c10c456f3de56b33547767.png" id="1_84gd1"]
+[ext_resource type="PackedScene" uid="uid://b1nbr13q34mmp" path="res://scenes/player.tscn" id="2_4s30k"]
+
+[node name="Node2D" type="Node2D" unique_id=1556496471]
+script = ExtResource("1_4s30k")
+
+[node name="F3b6a88657c10c456f3De56b33547767" type="Sprite2D" parent="." unique_id=424245885]
+position = Vector2(521, 171)
+scale = Vector2(1.304, 1.4189999)
+texture = ExtResource("1_84gd1")
+
+[node name="Player" parent="." unique_id=960053832 instance=ExtResource("2_4s30k")]
+position = Vector2(718, 469)
+
+[node name="TopLeft" type="Marker2D" parent="." unique_id=1271474084]
+position = Vector2(-131, -538)
+
+[node name="BottomRight" type="Marker2D" parent="." unique_id=818309770]
+position = Vector2(1173, 880)
