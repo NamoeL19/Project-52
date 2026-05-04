@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://epo818gl8aws" path="res://scripts/teste_1.gd" id="1_4s30k"]
 [ext_resource type="Texture2D" uid="uid://diuvrn74ypafa" path="res://assets/scenarios/f3b6a88657c10c456f3de56b33547767.png" id="1_84gd1"]
 [ext_resource type="PackedScene" uid="uid://b1nbr13q34mmp" path="res://scenes/player.tscn" id="2_4s30k"]
+[ext_resource type="Script" uid="uid://yact428jfstr" path="res://scripts/death_zone.gd" id="4_ko5aa"]
+[ext_resource type="Script" uid="uid://c7v13x0j144kt" path="res://scripts/check_point_manager.gd" id="5_xddxc"]
+[ext_resource type="PackedScene" uid="uid://dtgd3aksjkvlo" path="res://scenes/check_point.tscn" id="6_ieb30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdxqc"]
+size = Vector2(271, 137)
 
 [node name="Node2D" type="Node2D" unique_id=1556496471]
 script = ExtResource("1_4s30k")
@@ -12,7 +18,7 @@ position = Vector2(521, 171)
 scale = Vector2(1.304, 1.4189999)
 texture = ExtResource("1_84gd1")
 
-[node name="Player" parent="." unique_id=960053832 instance=ExtResource("2_4s30k")]
+[node name="Player" parent="." unique_id=960053832 groups=["player"] instance=ExtResource("2_4s30k")]
 position = Vector2(718, 469)
 
 [node name="TopLeft" type="Marker2D" parent="." unique_id=1271474084]
@@ -20,3 +26,20 @@ position = Vector2(-131, -538)
 
 [node name="BottomRight" type="Marker2D" parent="." unique_id=818309770]
 position = Vector2(1173, 880)
+
+[node name="DeathZone" type="Area2D" parent="." unique_id=1254648576 groups=["player"]]
+position = Vector2(721, -463)
+script = ExtResource("4_ko5aa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=110341650]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_pdxqc")
+debug_color = Color(0.8130874, 0.99999994, 0.0040799477, 0.41960785)
+
+[node name="CheckPointManager" type="Node" parent="." unique_id=1105910645]
+script = ExtResource("5_xddxc")
+
+[node name="CheckPoint" parent="CheckPointManager" unique_id=1478934630 instance=ExtResource("6_ieb30")]
+position = Vector2(-37, 359)
+
+[connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
