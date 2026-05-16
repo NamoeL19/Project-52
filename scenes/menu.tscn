@@ -94,9 +94,9 @@ expand_icon = true
 
 [node name="Label" type="Label" parent="." unique_id=1818786945]
 layout_mode = 0
-offset_left = 187.0
+offset_left = 161.0
 offset_top = 125.0
-offset_right = 983.0
+offset_right = 957.0
 offset_bottom = 193.0
 text = "MENU_TITLE"
 label_settings = SubResource("LabelSettings_v86rl")

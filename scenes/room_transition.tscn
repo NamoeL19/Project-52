@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://0v7uhqc8cs1n"]
+
+[ext_resource type="Script" uid="uid://bj2k6k3u84kfq" path="res://scripts/room_transition.gd" id="1_amjp8"]
+
+[node name="RoomTransition" type="Area2D" unique_id=1022431665]
+script = ExtResource("1_amjp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2009643844]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
