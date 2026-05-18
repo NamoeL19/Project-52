@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dtgd3aksjkvlo" path="res://scenes/check_point.tscn" id="6_ieb30"]
 [ext_resource type="Script" uid="uid://dy2dcqbht077w" path="res://scripts/camera_2d.gd" id="7_ieb30"]
 [ext_resource type="PackedScene" uid="uid://0v7uhqc8cs1n" path="res://scenes/room_transition.tscn" id="8_pi3h2"]
+[ext_resource type="AudioStream" uid="uid://c6ccc0jiv1fos" path="res://assets/audios/song_mid_levels.wav" id="9_wskdm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pi3h2"]
 texture = ExtResource("5_ieb30")
@@ -987,16 +988,16 @@ position = Vector2(201, 202)
 script = ExtResource("5_xddxc")
 
 [node name="CheckPoint" parent="CheckPointManager" unique_id=1478934630 instance=ExtResource("6_ieb30")]
-position = Vector2(207, -33)
+position = Vector2(205, -16)
 
 [node name="CheckPoint2" parent="CheckPointManager" unique_id=753070839 instance=ExtResource("6_ieb30")]
-position = Vector2(-71, -111)
+position = Vector2(-20, -109)
 
 [node name="CheckPoint3" parent="CheckPointManager" unique_id=536713086 instance=ExtResource("6_ieb30")]
-position = Vector2(-196, 35)
+position = Vector2(-192, 26)
 
 [node name="CheckPoint4" parent="CheckPointManager" unique_id=1844119388 instance=ExtResource("6_ieb30")]
-position = Vector2(90, 148)
+position = Vector2(32, 146)
 
 [node name="DeathZone" type="Area2D" parent="." unique_id=1254648576 groups=["player"]]
 position = Vector2(350, -210)
@@ -1065,6 +1066,10 @@ direction = 3
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RoomTransitions/Room4right" unique_id=1833998237]
 position = Vector2(1.5, -20.5)
 shape = SubResource("RectangleShape2D_5mg64")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1430230501]
+stream = ExtResource("9_wskdm")
+autoplay = true
 
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_body_entered"]
 [connection signal="body_entered" from="DeathZone2" to="DeathZone2" method="_on_body_entered"]

@@ -3,8 +3,8 @@ extends Camera2D
 @export var smoothing_enable: bool = true
 @export var smoothing_speed: float = 5.0
 
-const ROOM_WIDTH: int = 395
-const ROOM_HEIGHT: int = 270
+const ROOM_WIDTH: int = 496
+const ROOM_HEIGHT: int = 496
 const TRANSITION_DURATION: float = 0.25
 
 var current_room: Vector2 = Vector2.ZERO

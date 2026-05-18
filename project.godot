@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Projeto 52"
+config/name="A-Way"
 config/version="0.0.1"
 run/main_scene="uid://uprojybt0ism"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://mhd8svfnsmku"
 
 [autoload]
 
@@ -78,9 +78,9 @@ translation/locales=[]
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/stretch/mode="canvas_items"
+window/size/viewport_width=496
+window/size/viewport_height=496
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
@@ -90,6 +90,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 player="Grupo do Jogador"
 camera=""
+traps=""
 
 [input]
 

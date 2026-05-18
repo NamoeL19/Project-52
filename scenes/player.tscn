@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cwqgqwod8fm1q" path="res://assets/sprites/walk_back_sheets.png" id="8_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://dwmp1lg55xncb" path="res://assets/sprites/walk_front_sheets.png" id="9_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://cr323i141ldba" path="res://assets/sprites/walk_side_sheets.png" id="10_fulsm"]
+[ext_resource type="AudioStream" uid="uid://bkhwha3q4f6o3" path="res://assets/audios/dano_sound_v1.wav" id="11_d2wvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
 atlas = ExtResource("2_y4r1p")
@@ -127,7 +128,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"damage_back",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -135,7 +136,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"damage_front",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -143,7 +144,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"damage_side",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -249,7 +250,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mx1m4"]
-size = Vector2(20, 30)
+size = Vector2(13.333334, 4)
 
 [node name="Player" type="CharacterBody2D" unique_id=960053832]
 scale = Vector2(1.5, 1.5)
@@ -258,9 +259,12 @@ script = ExtResource("1_3vyb7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1280460348]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_holxr")
-animation = &"walk_back"
+animation = &"damage_side"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=346390109]
-position = Vector2(0, 1)
+position = Vector2(1.5894572e-07, 13.333334)
 shape = SubResource("RectangleShape2D_mx1m4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=315845722]
+stream = ExtResource("11_d2wvv")

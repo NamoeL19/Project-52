@@ -37,45 +37,45 @@ grow_vertical = 2
 script = ExtResource("1_4ytvr")
 
 [node name="ImagemDoDiaNasaGalaxiaE1733176936252" type="Sprite2D" parent="." unique_id=612576355]
-position = Vector2(576.49994, 325.49997)
-scale = Vector2(1.1240234, 1.1232638)
+position = Vector2(249.5, 248.00003)
+scale = Vector2(0.4814453, 0.86111116)
 texture = ExtResource("1_vjb58")
 
 [node name="ArtpoinSonicTheHedgehog2" type="Sprite2D" parent="." unique_id=104587539]
-position = Vector2(211.90625, 332.6926)
-scale = Vector2(0.10325978, 0.15375863)
+position = Vector2(73, 395)
+scale = Vector2(0.06472942, 0.04632269)
 texture = ExtResource("2_con2f")
 
 [node name="play" type="Button" parent="." unique_id=830817214]
 layout_mode = 0
-offset_left = 455.0
-offset_top = 310.0
-offset_right = 670.0
-offset_bottom = 358.0
+offset_left = 151.0
+offset_top = 191.0
+offset_right = 366.0
+offset_bottom = 239.0
 text = "MENU_START"
 
 [node name="quit" type="Button" parent="." unique_id=1256708804]
 layout_mode = 0
-offset_left = 456.0
-offset_top = 367.0
-offset_right = 671.0
-offset_bottom = 415.0
+offset_left = 152.0
+offset_top = 248.0
+offset_right = 367.0
+offset_bottom = 296.0
 text = "MENU_QUIT"
 
 [node name="credits" type="Button" parent="." unique_id=786175441]
 layout_mode = 0
-offset_left = 454.0
-offset_top = 421.0
-offset_right = 669.0
-offset_bottom = 469.0
+offset_left = 150.0
+offset_top = 302.0
+offset_right = 365.0
+offset_bottom = 350.0
 text = "MENU_CREDIT"
 
 [node name="pt_br" type="Button" parent="." unique_id=1761855330]
 layout_mode = 0
-offset_left = 1048.0
-offset_top = 588.00006
-offset_right = 2459.334
-offset_bottom = 1426.001
+offset_left = 439.00003
+offset_top = 451.0
+offset_right = 1183.667
+offset_bottom = 905.66736
 scale = Vector2(0.06, 0.06)
 icon = ExtResource("4_g3eks")
 icon_alignment = 1
@@ -83,10 +83,10 @@ expand_icon = true
 
 [node name="en_us" type="Button" parent="." unique_id=1429255660]
 layout_mode = 0
-offset_left = 956.0
-offset_top = 588.00006
-offset_right = 2367.3352
-offset_bottom = 1426.001
+offset_left = 376.0
+offset_top = 452.0
+offset_right = 1270.6697
+offset_bottom = 856.66736
 scale = Vector2(0.06, 0.06)
 icon = ExtResource("5_g3eks")
 icon_alignment = 1
@@ -94,10 +94,10 @@ expand_icon = true
 
 [node name="Label" type="Label" parent="." unique_id=1818786945]
 layout_mode = 0
-offset_left = 161.0
-offset_top = 125.0
-offset_right = 957.0
-offset_bottom = 193.0
+offset_left = 87.0
+offset_top = 46.0
+offset_right = 412.0
+offset_bottom = 114.0
 text = "MENU_TITLE"
 label_settings = SubResource("LabelSettings_v86rl")
 horizontal_alignment = 1
@@ -105,10 +105,10 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=954325425]
 layout_mode = 0
-offset_left = 434.0
-offset_top = 195.0
-offset_right = 695.0
-offset_bottom = 233.0
+offset_left = 120.0
+offset_top = 129.0
+offset_right = 381.0
+offset_bottom = 167.0
 text = "MENU_SUBTITLE"
 label_settings = SubResource("LabelSettings_13sgg")
 horizontal_alignment = 1

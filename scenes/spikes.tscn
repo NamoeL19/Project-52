@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bcr40eb4uwque"]
+
+[ext_resource type="Script" uid="uid://cod44nlp5883g" path="res://scripts/spikes.gd" id="1_xbcdo"]
+[ext_resource type="Texture2D" uid="uid://o2f7gts5647i" path="res://assets/sprites/espinhos.png" id="2_bflj7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd5gq"]
+atlas = ExtResource("2_bflj7")
+region = Rect2(27, 0, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vi4p"]
+atlas = ExtResource("2_bflj7")
+region = Rect2(0, 0, 27, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xa8pu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd5gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vi4p")
+}],
+"loop": true,
+"name": &"active",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmogx"]
+size = Vector2(28, 26)
+
+[node name="Spikes" type="Node2D" unique_id=1719996871]
+script = ExtResource("1_xbcdo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1705894712]
+sprite_frames = SubResource("SpriteFrames_xa8pu")
+animation = &"active"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=157205893]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1875270319]
+shape = SubResource("RectangleShape2D_nmogx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
