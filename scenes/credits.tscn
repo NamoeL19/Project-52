@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cw2ldho6b30uw"]
+
+[ext_resource type="Texture2D" uid="uid://6867n0cnuek8" path="res://assets/background_menu/Pitch A Way.png" id="2_8gwij"]
+[ext_resource type="Texture2D" uid="uid://cd4jpc3w4pasy" path="res://assets/background_menu/Título itchio.png" id="3_mah5v"]
+[ext_resource type="FontFile" uid="uid://xf6mqhlw3tqn" path="res://assets/fonts/GrapeSoda.ttf" id="4_kyhnv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13sgg"]
+atlas = ExtResource("3_mah5v")
+region = Rect2(420, 0, 210, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6lef"]
+atlas = ExtResource("3_mah5v")
+region = Rect2(630, 0, 210, 175)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ooihk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13sgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6lef")
+}],
+"loop": true,
+"name": &"menu",
+"speed": 2.0
+}]
+
+[node name="Credits" type="Control" unique_id=1642588872]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PitchAWay" type="Sprite2D" parent="." unique_id=1955595222]
+position = Vector2(496.00003, 248.12502)
+scale = Vector2(0.5166667, 0.4590278)
+texture = ExtResource("2_8gwij")
+
+[node name="CreditsContainer" type="Control" parent="." unique_id=1392178898]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer" unique_id=2027162217]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CreditsContainer" unique_id=195903580]
+position = Vector2(251.64322, 116.26315)
+scale = Vector2(1.498636, 1.2541353)
+sprite_frames = SubResource("SpriteFrames_ooihk")
+animation = &"menu"
+autoplay = "menu"
+frame_progress = 0.09165169
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsContainer" unique_id=1595726720]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 179.0
+offset_right = 416.0
+offset_bottom = 1491.0
+theme_override_fonts/normal_font = ExtResource("4_kyhnv")
+theme_override_fonts/bold_font = ExtResource("4_kyhnv")
+theme_override_fonts/bold_italics_font = ExtResource("4_kyhnv")
+theme_override_fonts/italics_font = ExtResource("4_kyhnv")
+theme_override_fonts/mono_font = ExtResource("4_kyhnv")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]
+Uma historia de ALLYSON SENHORINHA WOLTER
+
+
+
+
+
+
+
+Programação por MANUEL MACHADO GOATLARTE
+
+Game Design por EDUARDO DOS SANTOS HAUBMAM
+
+Audio Designer por RODRIGO MORAES DA SILVA
+
+Artes e sprites por ALLYSON SENHORINHA WOLTER
+
+Desenvolvimento por MANUEL MACHADO GOATLARTE
+
+Level Design por EDUARDO DOS SANTOS HAUBMAM
+
+Musica por RODRIGO MORAES DA SILVA
+
+Fonte utilizada: Grape Soda por jeti
+[/center]"
+fit_content = true
+scroll_active = false

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cuaqgx2ajroi1"]
+
+[ext_resource type="Script" uid="uid://y8v01y4x6txj" path="res://scripts/safe_zone.gd" id="1_316gq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnn2r"]
+size = Vector2(36, 36)
+
+[node name="SafeZone" type="Area2D" unique_id=704105844]
+script = ExtResource("1_316gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=765062696]
+shape = SubResource("RectangleShape2D_qnn2r")
+debug_color = Color(1, 0.7032715, 0.698846, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

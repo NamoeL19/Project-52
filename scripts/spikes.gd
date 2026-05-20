@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var sprite = $AnimatedSprite2D
+@onready var audio = $AudioStreamPlayer
 
 var activated := false
 var activating := false
@@ -22,9 +23,9 @@ func activate_spike():
 
 	# DELAY ANTES DE SUBIR
 	await get_tree().create_timer(0.5).timeout
-
+	
 	activated = true
-
+	audio.play()
 	sprite.frame = 1
 
 

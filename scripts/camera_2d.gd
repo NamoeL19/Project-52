@@ -2,6 +2,7 @@ extends Camera2D
 
 @export var smoothing_enable: bool = true
 @export var smoothing_speed: float = 5.0
+@export var initial_room: Vector2 = Vector2.ZERO
 
 const ROOM_WIDTH: int = 496
 const ROOM_HEIGHT: int = 496
@@ -15,16 +16,12 @@ var transition_tween: Tween
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
-
-	current_room = Vector2.ZERO
-
+	current_room = (player.global_position / Vector2(ROOM_WIDTH, ROOM_HEIGHT)).floor()
 	global_position = Vector2(
 		current_room.x * ROOM_WIDTH + ROOM_WIDTH / 2,
 		current_room.y * ROOM_HEIGHT + ROOM_HEIGHT / 2
 	)
-
 	update_limits()
-
 	position_smoothing_enabled = smoothing_enable
 	position_smoothing_speed = smoothing_speed
 

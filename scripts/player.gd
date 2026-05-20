@@ -8,7 +8,7 @@ var can_move: bool = true
 var last_direction := Vector2.DOWN
 
 var checkpoint_manager
-
+var in_safezone := false
 var is_dead := false
 var is_taking_damage := false
 
@@ -72,28 +72,26 @@ func update_animation(direction: Vector2) -> void:
 
 			animated_sprite.flip_h = false
 
-	# PLAYER PARADO
+	#PLAYER PARADO
 	else:
 
-		# IDLE LATERAL
+		#IDLE LATERAL
 		if abs(last_direction.x) > abs(last_direction.y):
 
 			animated_sprite.play("idle_side")
 
 			animated_sprite.flip_h = last_direction.x < 0
 
-		# IDLE COSTAS
+		#IDLE COSTAS
 		elif last_direction.y < 0:
 
 			animated_sprite.play("idle_back")
 
 			animated_sprite.flip_h = false
-
-		# IDLE FRENTE
+		
+		#IDLE FRENTE
 		else:
-
 			animated_sprite.play("idle_front")
-
 			animated_sprite.flip_h = false
 
 
@@ -158,30 +156,17 @@ func take_damage(amount := 1) -> void:
 
 
 func die() -> void:
-
 	if is_dead:
 		return
-
 	is_dead = true
-
 	can_move = false
-
 	velocity = Vector2.ZERO
-
-	#play_damage_animation()
-	
-	await get_tree().create_timer(0.4).timeout
-
+	animated_sprite.play("die")  # toca a animação
+	await animated_sprite.animation_finished  # espera terminar
 	position = checkpoint_manager.last_location
-
 	health = max_health
-
 	can_move = true
-
 	is_dead = false
-
 	is_taking_damage = false
-
 	invulnerable = false
-
 	update_animation(Vector2.ZERO)

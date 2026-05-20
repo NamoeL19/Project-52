@@ -1,31 +1,67 @@
 [gd_scene format=3 uid="uid://uprojybt0ism"]
 
 [ext_resource type="Script" uid="uid://dk2pb5o7m7qw5" path="res://scripts/menu.gd" id="1_4ytvr"]
-[ext_resource type="Texture2D" uid="uid://bda6jdgesmqwc" path="res://assets/background_menu/imagem-do-dia-nasa-galaxia-e1733176936252.png" id="1_vjb58"]
-[ext_resource type="Texture2D" uid="uid://dv7dsf0vq0jt" path="res://assets/background_menu/artpoin-sonic-the-hedgehog2.png" id="2_con2f"]
+[ext_resource type="Texture2D" uid="uid://6867n0cnuek8" path="res://assets/background_menu/Pitch A Way.png" id="2_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://dd8sfnftl5by5" path="res://assets/background_menu/jogar_normal.png" id="3_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://b1fw86gwxrmrg" path="res://assets/background_menu/créditos_normal.png" id="3_v86rl"]
+[ext_resource type="Texture2D" uid="uid://by4148jf8n8v7" path="res://assets/background_menu/creditos_pressed.png" id="4_13sgg"]
 [ext_resource type="Texture2D" uid="uid://kn77ntrdfogi" path="res://assets/background_menu/bandeira-do-brasil-og.png" id="4_g3eks"]
+[ext_resource type="Texture2D" uid="uid://1k7x0n2nf5d4" path="res://assets/background_menu/jogar_hover.png" id="4_ufwb2"]
+[ext_resource type="Texture2D" uid="uid://5vwbttjh8cq7" path="res://assets/background_menu/sair_normal.png" id="5_6cdou"]
 [ext_resource type="Texture2D" uid="uid://3v5i0t4osgj" path="res://assets/background_menu/Flag_of_the_United_States__28DDD-F-416E_specifications_29.png" id="5_g3eks"]
-[ext_resource type="FontFile" uid="uid://d1rf8o6f4pjya" path="res://assets/fonts/Oafaon.ttf" id="6_g3eks"]
+[ext_resource type="Texture2D" uid="uid://cd4jpc3w4pasy" path="res://assets/background_menu/Título itchio.png" id="5_v86rl"]
+[ext_resource type="Texture2D" uid="uid://iutkdljxhg58" path="res://assets/background_menu/sair_pressed.png" id="6_i42df"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_v86rl"]
-font = ExtResource("6_g3eks")
-font_size = 68
-font_color = Color(0.6627451, 1, 0, 1)
-outline_size = 15
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 15
-shadow_color = Color(0.796243, 0.796243, 0.796243, 1)
-shadow_offset = Vector2(-2.795, 3.535)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jp70"]
+texture = ExtResource("3_mj5lg")
 
-[sub_resource type="LabelSettings" id="LabelSettings_13sgg"]
-font = ExtResource("6_g3eks")
-font_size = 27
-font_color = Color(1, 0.4392157, 0.9764706, 1)
-outline_size = 15
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 15
-shadow_color = Color(0.796243, 0.796243, 0.796243, 1)
-shadow_offset = Vector2(-2.795, 3.535)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxgkd"]
+modulate_color = Color(0.81960785, 0.972549, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6gyw"]
+texture = ExtResource("4_ufwb2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3dmrc"]
+texture = ExtResource("5_6cdou")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81l6r"]
+texture = ExtResource("5_6cdou")
+modulate_color = Color(0.81960785, 0.972549, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rsfmq"]
+texture = ExtResource("6_i42df")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i6lef"]
+texture = ExtResource("3_v86rl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v86rl"]
+texture = ExtResource("3_v86rl")
+modulate_color = Color(0.81765527, 0.9718562, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70i5f"]
+texture = ExtResource("4_13sgg")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13sgg"]
+atlas = ExtResource("5_v86rl")
+region = Rect2(420, 0, 210, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6lef"]
+atlas = ExtResource("5_v86rl")
+region = Rect2(630, 0, 210, 175)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70i5f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13sgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6lef")
+}],
+"loop": true,
+"name": &"menu",
+"speed": 2.0
+}]
 
 [node name="Menu" type="Control" unique_id=1637098960]
 layout_mode = 3
@@ -36,46 +72,47 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4ytvr")
 
-[node name="ImagemDoDiaNasaGalaxiaE1733176936252" type="Sprite2D" parent="." unique_id=612576355]
-position = Vector2(249.5, 248.00003)
-scale = Vector2(0.4814453, 0.86111116)
-texture = ExtResource("1_vjb58")
-
-[node name="ArtpoinSonicTheHedgehog2" type="Sprite2D" parent="." unique_id=104587539]
-position = Vector2(73, 395)
-scale = Vector2(0.06472942, 0.04632269)
-texture = ExtResource("2_con2f")
+[node name="PitchAWay" type="Sprite2D" parent="." unique_id=1350456847]
+position = Vector2(496.00003, 248.12502)
+scale = Vector2(0.5166667, 0.4590278)
+texture = ExtResource("2_4ytvr")
 
 [node name="play" type="Button" parent="." unique_id=830817214]
 layout_mode = 0
-offset_left = 151.0
-offset_top = 191.0
-offset_right = 366.0
-offset_bottom = 239.0
-text = "MENU_START"
+offset_left = 145.0
+offset_top = 216.0
+offset_right = 360.0
+offset_bottom = 264.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_7jp70")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mxgkd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g6gyw")
 
 [node name="quit" type="Button" parent="." unique_id=1256708804]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 248.0
-offset_right = 367.0
-offset_bottom = 296.0
-text = "MENU_QUIT"
+offset_left = 145.0
+offset_top = 273.0
+offset_right = 360.0
+offset_bottom = 321.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3dmrc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_81l6r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rsfmq")
 
 [node name="credits" type="Button" parent="." unique_id=786175441]
 layout_mode = 0
-offset_left = 150.0
-offset_top = 302.0
-offset_right = 365.0
-offset_bottom = 350.0
-text = "MENU_CREDIT"
+offset_left = 145.0
+offset_top = 327.0
+offset_right = 360.0
+offset_bottom = 375.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_i6lef")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v86rl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_70i5f")
 
 [node name="pt_br" type="Button" parent="." unique_id=1761855330]
 layout_mode = 0
-offset_left = 439.00003
-offset_top = 451.0
-offset_right = 1183.667
-offset_bottom = 905.66736
+offset_left = 437.0
+offset_top = 454.0
+offset_right = 1215.001
+offset_bottom = 887.333
 scale = Vector2(0.06, 0.06)
 icon = ExtResource("4_g3eks")
 icon_alignment = 1
@@ -83,35 +120,21 @@ expand_icon = true
 
 [node name="en_us" type="Button" parent="." unique_id=1429255660]
 layout_mode = 0
-offset_left = 376.0
-offset_top = 452.0
-offset_right = 1270.6697
-offset_bottom = 856.66736
+offset_left = 383.0
+offset_top = 453.0
+offset_right = 1261.0032
+offset_bottom = 919.6665
 scale = Vector2(0.06, 0.06)
 icon = ExtResource("5_g3eks")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="." unique_id=1818786945]
-layout_mode = 0
-offset_left = 87.0
-offset_top = 46.0
-offset_right = 412.0
-offset_bottom = 114.0
-text = "MENU_TITLE"
-label_settings = SubResource("LabelSettings_v86rl")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="." unique_id=954325425]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 129.0
-offset_right = 381.0
-offset_bottom = 167.0
-text = "MENU_SUBTITLE"
-label_settings = SubResource("LabelSettings_13sgg")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=697640911]
+position = Vector2(248, 124.125)
+scale = Vector2(1.4166667, 1.2671429)
+sprite_frames = SubResource("SpriteFrames_70i5f")
+animation = &"menu"
+autoplay = "menu"
+frame_progress = 0.829042
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]

@@ -25,10 +25,10 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _clear_traps() -> void:
 	if room_traps:
-		room_traps.queue_free() 
-	
+		room_traps.queue_free() 	
 	for trap in get_tree().get_nodes_in_group("traps"):
 		trap.queue_free()
+
 
 func _get_actual_direction(body: Node2D) -> Vector2:
 	var dir_vector = Utils.direction_to_vector(direction)

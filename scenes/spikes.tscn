@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cod44nlp5883g" path="res://scripts/spikes.gd" id="1_xbcdo"]
 [ext_resource type="Texture2D" uid="uid://o2f7gts5647i" path="res://assets/sprites/espinhos.png" id="2_bflj7"]
+[ext_resource type="AudioStream" uid="uid://cx1i7cecn0ml2" path="res://assets/audios/espinho_surgindo.wav" id="3_0vi4p"]
+[ext_resource type="AudioStream" uid="uid://de6h6tjrflw1v" path="res://assets/audios/espinho_surgindov2.wav" id="4_w4mxr"]
+[ext_resource type="AudioStream" uid="uid://bviwwm77moyyn" path="res://assets/audios/espinho_surgindov3.wav" id="5_xa8pu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kd5gq"]
 atlas = ExtResource("2_bflj7")
@@ -28,7 +31,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmogx"]
 size = Vector2(28, 26)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nmogx"]
+streams_count = 3
+stream_0/stream = ExtResource("3_0vi4p")
+stream_1/stream = ExtResource("4_w4mxr")
+stream_2/stream = ExtResource("5_xa8pu")
+
 [node name="Spikes" type="Node2D" unique_id=1719996871]
+scale = Vector2(1.25, 1.25)
 script = ExtResource("1_xbcdo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1705894712]
@@ -39,6 +49,10 @@ animation = &"active"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1875270319]
 shape = SubResource("RectangleShape2D_nmogx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=878727357]
+stream = SubResource("AudioStreamRandomizer_nmogx")
+volume_db = -4.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

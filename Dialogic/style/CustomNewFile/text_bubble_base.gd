@@ -31,12 +31,10 @@ func register_character(character:Variant, node:Node):
 			character = load(character)
 		else:
 			character = DialogicResourceUtil.get_character_resource(character)
-
 		if not character:
 			printerr("[Dialogic] Textbubble: Tried registering character from invalid string '", character_string, "'.")
 
 	registered_characters[character] = node
-
 	if len(registered_characters) > len(bubbles) and len(bubbles) < bubble_count:
 		add_bubble()
 
@@ -47,7 +45,6 @@ func _get_persistent_info() -> Dictionary:
 
 func _load_persistent_info(info: Dictionary) -> void:
 	var register_info: Dictionary = info.get("textbubble_registers", {})
-
 	for character in register_info:
 		if is_instance_valid(register_info[character]):
 			register_character(character, register_info[character])
@@ -61,10 +58,8 @@ func add_bubble() -> void:
 	bubbles.append(new_bubble)
 
 
-func _on_dialogic_text_event(info: Dictionary):
-
+func _on_dialogic_text_event(info:Dictionary):
 	var bubble_to_use: Node
-
 	for bubble in bubbles:
 		if bubble.current_character == info.character:
 			bubble_to_use = bubble
@@ -77,37 +72,22 @@ func _on_dialogic_text_event(info: Dictionary):
 	if bubble_to_use == null:
 		bubble_to_use = bubbles[0]
 
-
-
-	# =========================
-	# NPC CUSTOM FOLLOW SYSTEM
-	# =========================
-
-	var node_to_point_at: Node = null
-
-	# Primeiro tenta usar o NPC enviado pelo trigger
-	if Dialogic.current_state_info.has("speaker_node"):
-		node_to_point_at = Dialogic.current_state_info["speaker_node"]
-		$Example.hide()
-
-	# Se não tiver, usa o sistema padrão do Dialogic
-	elif info.character in registered_characters:
+	var node_to_point_at: Node
+	if info.character in registered_characters:
 		node_to_point_at = registered_characters[info.character]
 		$Example.hide()
-
-	# Se não existir nenhum, usa o exemplo
 	else:
 		node_to_point_at = $Example/CRT/Marker
 		$Example.show()
+
 	bubble_to_use.current_character = info.character
 	bubble_to_use.node_to_point_at = node_to_point_at
 	if not bubble_to_use.visible:
 		bubble_to_use.reset()
-		
 	if has_node("TextBubbleLayer"):
 		get_node("TextBubbleLayer").bubble_apply_overrides(bubble_to_use)
 	bubble_to_use.open()
-	
+
 	## Now close other bubbles
 	for bubble in bubbles:
 		if bubble != bubble_to_use:

@@ -28,9 +28,13 @@ directories/dch_directory={
 "Charles": "res://Dialogic/Characters/Charles.dch"
 }
 directories/dtl_directory={
-"Teste": "res://Dialogic/Timelines/Teste.dtl"
+"Teste": "res://Dialogic/Timelines/Teste.dtl",
+"fala2": "res://Dialogic/Timelines/fala2.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://Dialogic/style/New_File.tres",
+"New_File": "res://Dialogic/style/New_File.tres"
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -75,6 +79,9 @@ translation/intern/file_mode=1
 translation/intern/translation_folder="res://assets/language"
 translation/id_counter=18
 translation/locales=[]
+glossary/default_case_sensitive=true
+layout/style_list=["res://Dialogic/style/New_File.tres"]
+layout/default_style="res://Dialogic/style/New_File.tres"
 
 [display]
 

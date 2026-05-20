@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv7dsf0vq0jt"
-path="res://.godot/imported/artpoin-sonic-the-hedgehog2.png-ae3fed18be68f6a0d1d029024c4fa2b7.ctex"
+uid="uid://5vwbttjh8cq7"
+path="res://.godot/imported/sair_normal.png-4552ac992dc040deaa1ffe8f231cfe7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background_menu/artpoin-sonic-the-hedgehog2.png"
-dest_files=["res://.godot/imported/artpoin-sonic-the-hedgehog2.png-ae3fed18be68f6a0d1d029024c4fa2b7.ctex"]
+source_file="res://assets/background_menu/sair_normal.png"
+dest_files=["res://.godot/imported/sair_normal.png-4552ac992dc040deaa1ffe8f231cfe7b.ctex"]
 
 [params]
 

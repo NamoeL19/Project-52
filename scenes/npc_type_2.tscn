@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://ds6h6df2lrpco"]
+
+[ext_resource type="Texture2D" uid="uid://bmcbmxjx8t1un" path="res://assets/sprites/idle_side_sheets.png" id="1_5xmyc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5pya"]
+atlas = ExtResource("1_5xmyc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43hbl"]
+atlas = ExtResource("1_5xmyc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh336"]
+atlas = ExtResource("1_5xmyc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpge8"]
+atlas = ExtResource("1_5xmyc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a48hr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5pya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43hbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh336")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpge8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=757018368]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1456900230]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_a48hr")
+autoplay = "default"
+frame_progress = 0.058336835

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d1sb4emodvr10"]
+
+[ext_resource type="Script" uid="uid://fef41wloapdw" path="res://scripts/textcutscene.gd" id="1_lu1ri"]
+[ext_resource type="FontFile" uid="uid://xf6mqhlw3tqn" path="res://assets/fonts/GrapeSoda.ttf" id="2_qon50"]
+
+[node name="Textcutscene" type="CanvasLayer" unique_id=1100870219]
+script = ExtResource("1_lu1ri")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1990693800]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=632935680]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_qon50")
+theme_override_font_sizes/font_size = 41
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

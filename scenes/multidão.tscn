@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bsnvheccmed1i"]
+
+[ext_resource type="Texture2D" uid="uid://c18fkxo7s2pp" path="res://assets/sprites/multidão.png" id="1_enlbc"]
+[ext_resource type="Script" uid="uid://b5u8jf7534y1b" path="res://scripts/multidão.gd" id="1_kdhjn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdhjn"]
+atlas = ExtResource("1_enlbc")
+region = Rect2(0, 0, 110, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atv32"]
+atlas = ExtResource("1_enlbc")
+region = Rect2(110, 0, 110, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf57v"]
+atlas = ExtResource("1_enlbc")
+region = Rect2(220, 0, 110, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0asj"]
+atlas = ExtResource("1_enlbc")
+region = Rect2(330, 0, 110, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tth8w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdhjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atv32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf57v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0asj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox8sf"]
+size = Vector2(30, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atv32"]
+size = Vector2(118, 40)
+
+[node name="multidão" type="CharacterBody2D" unique_id=1127625571]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_kdhjn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1067767489]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_tth8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=114164279]
+shape = SubResource("RectangleShape2D_ox8sf")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=138609197]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=485741975]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=502020664]
+shape = SubResource("RectangleShape2D_atv32")
+debug_color = Color(0.9423964, 7.893444e-06, 0.60854083, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
