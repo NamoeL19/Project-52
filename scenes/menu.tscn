@@ -108,6 +108,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_v86rl")
 theme_override_styles/hover = SubResource("StyleBoxTexture_70i5f")
 
 [node name="pt_br" type="Button" parent="." unique_id=1761855330]
+visible = false
 layout_mode = 0
 offset_left = 437.0
 offset_top = 454.0
@@ -119,6 +120,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="en_us" type="Button" parent="." unique_id=1429255660]
+visible = false
 layout_mode = 0
 offset_left = 383.0
 offset_top = 453.0
@@ -138,3 +140,5 @@ autoplay = "menu"
 frame_progress = 0.829042
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]

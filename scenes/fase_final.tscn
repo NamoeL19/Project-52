@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://cv1ipgatb540p"]
+
+[ext_resource type="Texture2D" uid="uid://dgedphkbwhiek" path="res://assets/sprites/sala final.png" id="1_q456b"]
+[ext_resource type="Script" uid="uid://kv2wujok2vq2" path="res://scripts/fase_final.gd" id="1_wq2vs"]
+[ext_resource type="PackedScene" uid="uid://b1nbr13q34mmp" path="res://scenes/player.tscn" id="2_rpg7l"]
+[ext_resource type="Script" uid="uid://dy2dcqbht077w" path="res://scripts/camera_2d.gd" id="3_otoeb"]
+[ext_resource type="AudioStream" uid="uid://cfhcexraabb1i" path="res://assets/audios/song_final_game.wav" id="4_jriq2"]
+[ext_resource type="PackedScene" uid="uid://ds6h6df2lrpco" path="res://scenes/npc_type_2.tscn" id="5_mvxwg"]
+[ext_resource type="PackedScene" uid="uid://he3ovcs0bj2f" path="res://scenes/npc_type_1.tscn" id="6_8ba5o"]
+[ext_resource type="PackedScene" uid="uid://d1sb4emodvr10" path="res://scenes/textcutscene.tscn" id="8_7mjf4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpg7l"]
+atlas = ExtResource("1_q456b")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otoeb"]
+atlas = ExtResource("1_q456b")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jriq2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpg7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otoeb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.6
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvxwg"]
+size = Vector2(7, 493)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ba5o"]
+size = Vector2(494, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq2vs"]
+size = Vector2(494, 7)
+
+[node name="Fase_final" type="Node2D" unique_id=1068329774 node_paths=PackedStringArray("cutscene")]
+script = ExtResource("1_wq2vs")
+cutscene = NodePath("Textcutscene")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=615183995]
+texture_filter = 1
+position = Vector2(248, 248)
+scale = Vector2(2.48, 2.48)
+sprite_frames = SubResource("SpriteFrames_jriq2")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=2087871894]
+texture_filter = 1
+position = Vector2(248, 248)
+scale = Vector2(2.48, 2.48)
+sprite_frames = SubResource("SpriteFrames_jriq2")
+autoplay = "default"
+
+[node name="Player" parent="." unique_id=960053832 groups=["player"] instance=ExtResource("2_rpg7l")]
+visibility_layer = 3
+z_index = 1
+position = Vector2(243, 39.00003)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1568276878 groups=["camera"]]
+z_index = 1
+position = Vector2(248, 248)
+script = ExtResource("3_otoeb")
+
+[node name="Paredes" type="Node" parent="." unique_id=1553478233]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Paredes" unique_id=1588775910]
+position = Vector2(3, 189)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D" unique_id=448251287]
+position = Vector2(0.5, 58.5)
+shape = SubResource("RectangleShape2D_mvxwg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Paredes" unique_id=961946408]
+position = Vector2(3, 189)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D2" unique_id=76947080]
+position = Vector2(489, 61)
+shape = SubResource("RectangleShape2D_mvxwg")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Paredes" unique_id=2094399857]
+position = Vector2(99, 227)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D3" unique_id=441679821]
+position = Vector2(148, 265.5)
+shape = SubResource("RectangleShape2D_8ba5o")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Paredes" unique_id=599549403]
+position = Vector2(101, -261)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D4" unique_id=1297821956]
+position = Vector2(148, 265.5)
+shape = SubResource("RectangleShape2D_wq2vs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1822358907]
+stream = ExtResource("4_jriq2")
+volume_db = -2.0
+autoplay = true
+
+[node name="NPC7" parent="." unique_id=757018368 instance=ExtResource("5_mvxwg")]
+modulate = Color(0.9480874, 0.67275125, 0.6038714, 1)
+position = Vector2(266, 251.00003)
+rotation = 3.1415927
+scale = Vector2(1.5, -1.5)
+
+[node name="NPC9" parent="." unique_id=1562052466 instance=ExtResource("5_mvxwg")]
+modulate = Color(0.9490196, 0.39607844, 1, 1)
+position = Vector2(156, 111.000015)
+rotation = 3.1415927
+scale = Vector2(1.5, -1.5)
+
+[node name="NPC8" parent="." unique_id=1960371595 instance=ExtResource("5_mvxwg")]
+modulate = Color(0.8509804, 0.72156864, 0, 1)
+position = Vector2(367, 100.00003)
+rotation = 3.1415927
+scale = Vector2(1.5, -1.5)
+
+[node name="NPC1" parent="." unique_id=1543990033 instance=ExtResource("6_8ba5o")]
+modulate = Color(0.7058824, 1, 1, 1)
+position = Vector2(96.00018, 272.00024)
+scale = Vector2(1.5, 1.5)
+
+[node name="NPC2" parent="." unique_id=1445055730 instance=ExtResource("6_8ba5o")]
+modulate = Color(0.5411765, 0.7019608, 0.8235294, 1)
+position = Vector2(363, 172)
+scale = Vector2(1.5, 1.5)
+
+[node name="NPC3" parent="." unique_id=2044486982 instance=ExtResource("6_8ba5o")]
+modulate = Color(0.87573284, 0.8348008, 0, 1)
+position = Vector2(382, 393)
+scale = Vector2(1.5, 1.5)
+
+[node name="NPC10" parent="." unique_id=1661754341 instance=ExtResource("5_mvxwg")]
+modulate = Color(1, 0.7764706, 1, 1)
+position = Vector2(174, 344)
+scale = Vector2(1.5, 1.5)
+
+[node name="NPC13" parent="." unique_id=1964087894 instance=ExtResource("5_mvxwg")]
+modulate = Color(0.7921569, 0.5058824, 1, 1)
+position = Vector2(278, 123)
+scale = Vector2(1.5, 1.5)
+
+[node name="NPC11" parent="." unique_id=2021674903 instance=ExtResource("5_mvxwg")]
+modulate = Color(1, 1, 0.7372549, 1)
+position = Vector2(180, 197.00002)
+scale = Vector2(1.5, 1.5)
+
+[node name="NPC12" parent="." unique_id=485782303 instance=ExtResource("5_mvxwg")]
+modulate = Color(1, 0.4509804, 0.1764706, 1)
+position = Vector2(357, 269)
+scale = Vector2(1.5, 1.5)
+
+[node name="Textcutscene" parent="." unique_id=1100870219 instance=ExtResource("8_7mjf4")]
+visible = false

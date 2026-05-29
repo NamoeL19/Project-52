@@ -29,7 +29,14 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Teste": "res://Dialogic/Timelines/Teste.dtl",
-"fala2": "res://Dialogic/Timelines/fala2.dtl"
+"fala2": "res://Dialogic/Timelines/fala2.dtl",
+"fala3": "res://Dialogic/Timelines/fala3.dtl",
+"fala4": "res://Dialogic/Timelines/fala4.dtl",
+"fala5": "res://Dialogic/Timelines/fala5.dtl",
+"fala6": "res://Dialogic/Timelines/fala6.dtl",
+"fala7": "res://Dialogic/Timelines/fala7.dtl",
+"fala8": "res://Dialogic/Timelines/fala8.dtl",
+"fala9": "res://Dialogic/Timelines/fala9.dtl"
 }
 layout/style_directory={
 "": "res://Dialogic/style/New_File.tres",
